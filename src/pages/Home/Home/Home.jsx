@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import WePvtBestInt from '../WePvtBestInt/WePvtBestInt';
 import OurCompleteProject from '../OurCompleteProject/OurCompleteProject';
+import ReputationClients from '../ReputationClients/ReputationClients';
 
 const Home = () => {
     return (
@@ -9,6 +10,8 @@ const Home = () => {
             <Banner></Banner>
             <WePvtBestInt></WePvtBestInt>
             <OurCompleteProject></OurCompleteProject>
+            {/* dynamic section: Home & Office Interior Design Services We Offer - it will be come from data base */}
+            <ReputationClients></ReputationClients>
         </div>
     );
 };
