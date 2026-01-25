@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurCompleteProject = () => {
     return (
-        <div className='w-11/12 mx-auto my-20'>
+        <div className='w-11/12 mx-auto my-10'>
             <div className='text-center'>
                 <h2 className='text-2xl font-semibold my-5'>
                     Our Completed Interior Designs Projects

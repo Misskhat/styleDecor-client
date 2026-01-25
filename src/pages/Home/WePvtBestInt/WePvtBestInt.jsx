@@ -3,7 +3,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const WePvtBestInt = () => {
     return (
-        <div className='bg-base-200 my-20 py-15'>
+        <div className='bg-base-200 my-10 py-15'>
             <div className='w-11/12 mx-auto md:flex items-center justify-between gap-12'>
                 <div className='md:flex-1'>
                     <h2 className='text-2xl font-semibold pb-5'>We Provide Best Interior Designs in Bangladesh</h2>
