@@ -5,6 +5,9 @@ import OurCompleteProject from '../OurCompleteProject/OurCompleteProject';
 import ReputationClients from '../ReputationClients/ReputationClients';
 import ChiefInterior from '../ChiefInterior/ChiefInterior';
 import ResearchDevelopment from '../ResearchDevelopment/ResearchDevelopment';
+import Products from '../Products/Products';
+import HomeOfficeInt from '../HomeOfficeInt/HomeOfficeInt';
+import WhyAppoint from '../WhyAppoint/WhyAppoint';
 
 const Home = () => {
     return (
@@ -13,9 +16,13 @@ const Home = () => {
             <WePvtBestInt></WePvtBestInt>
             <OurCompleteProject></OurCompleteProject>
             {/* dynamic section: Home & Office Interior Design Services We Offer - it will be come from data base */}
+            <HomeOfficeInt></HomeOfficeInt>
             <ReputationClients></ReputationClients>
             <ChiefInterior></ChiefInterior>
             <ResearchDevelopment></ResearchDevelopment>
+            {/* dynamic section: Our Products - it will be come from data base */}
+            <Products></Products>
+            <WhyAppoint></WhyAppoint>
         </div>
     );
 };

@@ -7,7 +7,7 @@ const ResearchDevelopment = () => {
             <div className='w-11/12 mx-auto md:flex items-center justify-between gap-12'>
                 <div className='md:flex-1'>
                     <h4 className='text-xl text-blue-400'>Research & Development:</h4>
-                    <h2 className='text-2xl font-semibold pb-5'>Research Paper Presentation on Future of Energy-Efficient Interiors</h2>
+                    <h2 className='text-3xl font-semibold pb-5 text-[#090979]'>Research Paper Presentation on Future of Energy-Efficient Interiors</h2>
                     <p className='opacity-60'>Smart lighting is transforming the way we design and experience interior spaces. In Bangladesh, the need for energy-efficient solutions is greater than ever.
                     </p>
                     <p className='py-5 opacity-60'>

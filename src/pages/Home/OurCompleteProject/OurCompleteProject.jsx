@@ -4,7 +4,7 @@ const OurCompleteProject = () => {
     return (
         <div className='w-11/12 mx-auto my-10'>
             <div className='text-center'>
-                <h2 className='text-2xl font-semibold my-5'>
+                <h2 className='text-3xl font-semibold my-5 text-[#090979]'>
                     Our Completed Interior Designs Projects
                 </h2>
                 <p className='md:w-3xl mx-auto'>Interior Concepts & Design Limited has completed a wide range of projects all over Bangladesh. Our aim is to satisfy our respected clients in the best possible way.
