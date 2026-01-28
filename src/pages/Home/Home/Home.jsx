@@ -8,6 +8,7 @@ import ResearchDevelopment from '../ResearchDevelopment/ResearchDevelopment';
 import Products from '../Products/Products';
 import HomeOfficeInt from '../HomeOfficeInt/HomeOfficeInt';
 import WhyAppoint from '../WhyAppoint/WhyAppoint';
+import CustomerReviews from '../CustomerReviews/CustomerReviews';
 
 const Home = () => {
     return (
@@ -23,6 +24,8 @@ const Home = () => {
             {/* dynamic section: Our Products - it will be come from data base */}
             <Products></Products>
             <WhyAppoint></WhyAppoint>
+            {/* dynamic section: Customer review - it will be come from data base */}
+            <CustomerReviews></CustomerReviews>
         </div>
     );
 };
