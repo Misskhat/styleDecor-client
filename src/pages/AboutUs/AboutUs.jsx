@@ -13,18 +13,24 @@ const AboutUs = () => {
             <p className='opacity-85'>Whether you have a question about our features, service pricing or anything else our team is ready to answer all your questions.</p>
             <div className='flex gap-5 py-5'>
                 <div className='flex-1 space-y-2'>
-                    <div className='flex items-center gap-2 text-blue-950'><FaLocationDot /> 10, Nikunja - 2, Khilkhet, Dhaka – 1229</div>
+                    <div className='flex items-center gap-2 text-blue-950'><FaLocationDot />Rd - 10, Nikunja - 2, Khilkhet, Dhaka – 1229</div>
                     <div className='flex items-center gap-2 text-blue-950'><FaMobileButton /> Call: +8801754-804496</div>
                     <div className='flex items-center gap-2 text-blue-950'><MdEmail /> Mail: misskhat.hossen@gmail.com</div>
                     <form>
+                        <h6 className='mt-5 font-bold'>Send your message</h6>
                         <fieldset className='fieldset'>
-                            <label className="label">Email</label>
+                            <label className="label font-semibold text-black">Name</label>
+                            <input type="text" className="input" placeholder="Name" />
+                            <label className="label font-semibold text-black">Email</label>
                             <input type="email" className="input" placeholder="Email" />
+                            <label className="label font-semibold text-black">Your Message</label>
+                            <textarea type="" rows={5} cols={5} className="textarea" placeholder="Type your message here......" />
+                            <button className='flex w-1/6 justify-center px-4 py-2 bg-linear-to-r from-[#090979] to-[#00D4FF] text-white font-semibold rounded'>Submit</button>
                         </fieldset>
                     </form>
                 </div>
-                <div className='w-full h-96 rounded flex-2'>
-                    <MapContainer className='w-full h-96' center={position} zoom={10} scrollWheelZoom={false}>
+                <div className='w-full h-[500px] rounded flex-2'>
+                    <MapContainer className='w-full h-[500px]' center={position} zoom={10} scrollWheelZoom={false}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -34,7 +40,7 @@ const AboutUs = () => {
                                 StyleDecor <br /> Dhaka, Bangladesh.
                             </Popup>
                         </Marker>
-                    </MapContainer>,
+                    </MapContainer>
                 </div>
 
             </div>
