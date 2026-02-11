@@ -27,7 +27,7 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <h6 className="footer-title">Contact Us</h6>
-                    <a className="link link-hover">323 Aftab Tower, 1st Floor, <br />Rampura, Dhaka-1219.</a>
+                    <a className="link link-hover">Rd - 10, Nikunja - 2 <br />Khilkhet, Dhaka – 1229</a>
                     <a className="link link-hover">+8801754804496</a>
                     <a className="link link-hover">misskhat.hossen@gmail.com</a>
 

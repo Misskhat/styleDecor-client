@@ -3,7 +3,8 @@ import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
-import AboutUs from "../pages/AboutUs/AboutUs";
+import AuthLayout from "../layouts/AuthLayout";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 
 export const router = createBrowserRouter([
@@ -16,17 +17,23 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/about',
-                Component: AboutUs
+                path: 'contact',
+                Component: ContactUs
             },
+        ]
+    },
+    {
+        path: "/",
+        Component: AuthLayout,
+        children: [
             {
-                path: '/login',
+                path: 'login',
                 Component: Login
             },
             {
-                path: '/registration',
+                path: 'registration',
                 Component: Registration
             }
         ]
-    },
+    }
 ]);
