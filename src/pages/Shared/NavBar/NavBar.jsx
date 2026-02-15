@@ -17,6 +17,7 @@ const NavBar = () => {
     const links = <div>
         <NavLink to={'/'} className={"px-4"}>Home</NavLink>
         <NavLink to={'/services'} className={"px-4"}>Services</NavLink>
+        <NavLink to={'/service-booking'} className={"px-4"}>Service Booking</NavLink>
         <NavLink to={'/about'} className={"px-4"}>About</NavLink>
         <NavLink to={'/contact'} className={"px-4"}>Contact</NavLink>
     </div>

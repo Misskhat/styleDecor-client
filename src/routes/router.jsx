@@ -7,6 +7,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import PrivateRouter from "./PrivateRouter";
 import Decorator from "../pages/Decorator/Decorator";
+import ServiceBooking from "../pages/ServiceBooking/ServiceBooking";
 
 
 export const router = createBrowserRouter([
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path: 'decorator',
                 element: <PrivateRouter> <Decorator></Decorator></PrivateRouter>
+            },
+            {
+                path: 'service-booking',
+                element: <PrivateRouter> <ServiceBooking></ServiceBooking></PrivateRouter>
             }
         ]
     },
