@@ -1,14 +1,26 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router';
-import { FcGoogle } from "react-icons/fc";
+import { Link, useLocation, useNavigate } from 'react-router';
+import useAuth from '../../hooks/useAuth';
+import SocialLogInButton from '../../components/SocialLogInButton/SocialLogInButton';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
+    const { signInUser } = useAuth()
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleLogin = (data) => {
         console.log(data);
+        signInUser(data.email, data.password)
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state || '/')
+                toast.success('Welcome! and thank you for log in')
+            })
+            .catch(error => console.log(error))
     }
     return (
         <div>
@@ -38,11 +50,8 @@ const Login = () => {
                                 <button className="btn mt-4 bg-linear-to-r from-[#090979] to-[#00D4FF] text-white">Login</button>
                             </fieldset>
                         </form>
-                        <button className="btn bg-white text-black border-[#e5e5e5]">
-                            <FcGoogle className='text-2xl' />
-                            Login with Google
-                        </button>
-                        <p>Don't have any account? <Link to={"/registration"} className='cursor-pointer'><span className='font-bold text-blue-500'>Register</span></Link></p>
+                        <SocialLogInButton></SocialLogInButton>
+                        <p>Don't have any account? <Link state={location.state} to={"/registration"} className='cursor-pointer'><span className='font-bold text-blue-500'>Register</span></Link></p>
                     </div>
                 </div>
             </div>

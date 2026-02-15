@@ -5,6 +5,8 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import AuthLayout from "../layouts/AuthLayout";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import PrivateRouter from "./PrivateRouter";
+import Decorator from "../pages/Decorator/Decorator";
 
 
 export const router = createBrowserRouter([
@@ -20,6 +22,10 @@ export const router = createBrowserRouter([
                 path: 'contact',
                 Component: ContactUs
             },
+            {
+                path: 'decorator',
+                element: <PrivateRouter> <Decorator></Decorator></PrivateRouter>
+            }
         ]
     },
     {

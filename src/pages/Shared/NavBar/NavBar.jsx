@@ -1,8 +1,19 @@
 import React from 'react';
 import Logo from '../../../components/Logo/Logo';
 import { Link, NavLink } from 'react-router';
+import useAuth from '../../../hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const NavBar = () => {
+    const { user, signOutUser } = useAuth();
+
+    const handleSignOut = () => {
+        signOutUser()
+            .then()
+            .catch(error => console.log(error))
+        toast.warning('You are successfully log out. See you again!')
+    }
+
     const links = <div>
         <NavLink to={'/'} className={"px-4"}>Home</NavLink>
         <NavLink to={'/services'} className={"px-4"}>Services</NavLink>
@@ -30,8 +41,31 @@ const NavBar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to={'/login'} className="btn bg-[#00D4FF]">Login</Link>
+                <div className="navbar-end gap-2">
+                    {user ?
+                        <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt="Tailwind CSS Navbar component"
+                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                </div>
+                            </div>
+                            <ul
+                                tabIndex="-1"
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                <li><a>Settings</a></li>
+                                <li>
+                                    <Link onClick={handleSignOut} className="btn bg-[#00D4FF]">Log Out</Link>
+
+                                </li>
+                            </ul>
+                        </div>
+                        : <Link to={'/login'} className="btn bg-[#00D4FF]">Login</Link>
+                    }
+                    <button className='btn bg-[#00D4FF]'>
+                        <Link to={'/decorator'}>Decorator</Link>
+                    </button>
                 </div>
             </div>
         </div>
