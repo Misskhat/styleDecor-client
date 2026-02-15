@@ -8,6 +8,7 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import PrivateRouter from "./PrivateRouter";
 import Decorator from "../pages/Decorator/Decorator";
 import ServiceBooking from "../pages/ServiceBooking/ServiceBooking";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 
 export const router = createBrowserRouter([
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
             {
                 path: 'contact',
                 Component: ContactUs
+            },
+            {
+                path: 'about',
+                Component: AboutUs
             },
             {
                 path: 'decorator',
