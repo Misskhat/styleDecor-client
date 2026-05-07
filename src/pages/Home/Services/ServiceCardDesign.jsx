@@ -29,7 +29,7 @@ const ServiceCardDesign = ({ service }) => {
           <div className="card-actions mt-6">
             <Link
               to={`/service/${_id}`}
-              className="btn btn-neutral btn-sm w-full"
+              className="btn btn-neutral border-none btn-sm w-full bg-linear-to-r from-[#090979] to-[#00D4FF] text-white"
             >
               View Details
             </Link>
