@@ -11,6 +11,7 @@ import ServiceBooking from "../pages/ServiceBooking/ServiceBooking";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Services from "../pages/Home/Services/Services";
+import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "services",
         Component: Services,
+      },
+      {
+        path: "services/:id",
+        Component: ServiceDetails,
       },
       {
         path: "contact",

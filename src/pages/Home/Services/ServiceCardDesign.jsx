@@ -13,7 +13,7 @@ const ServiceCardDesign = ({ service }) => {
           <img
             src={image}
             alt={service_name}
-            className="w-[600px] h-64 object-cover hover:scale-105 transition duration-500"
+            className="w-[600px] h-[300px] object-cover hover:scale-105 transition duration-500"
           />
         </figure>
 
@@ -28,8 +28,8 @@ const ServiceCardDesign = ({ service }) => {
 
           <div className="card-actions mt-6">
             <Link
-              to={`/service/${_id}`}
-              className="btn btn-neutral border-none btn-sm w-full bg-linear-to-r from-[#090979] to-[#00D4FF] text-white"
+              to={`/services/${_id}`}
+              className="btn btn-neutral border-none w-full bg-linear-to-r from-[#090979] to-[#00D4FF] text-white"
             >
               View Details
             </Link>

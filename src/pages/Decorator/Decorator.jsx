@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Decorator = () => {
-    return (
-        <div>
-
-        </div>
-    );
+  return <div>Decorator page</div>;
 };
 
 export default Decorator;
