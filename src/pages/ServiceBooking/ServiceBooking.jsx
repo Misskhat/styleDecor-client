@@ -2,12 +2,15 @@ import { useForm } from "react-hook-form";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import useAuth from "../../hooks/useAuth";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { axiosInstance } from "../../utility/axiosInstance";
+import { useEffect, useState } from "react";
 
 const ServiceBooking = () => {
   const { id } = useParams();
-  //   console.log(id);
   const { user } = useAuth();
+  const navigate = useNavigate();
+  const [services, setServices] = useState([]);
   console.log(user);
   const {
     register,
@@ -22,6 +25,15 @@ const ServiceBooking = () => {
     },
   });
 
+  useEffect(() => {
+    axiosInstance
+      .get("/api/services")
+      .then((res) => {
+        setServices(res.data.services);
+      })
+      .catch((errors) => console.log(errors));
+  }, []);
+
   const handleBookingForm = (data) => {
     const bookingData = {
       userEmail: user.email,
@@ -30,9 +42,14 @@ const ServiceBooking = () => {
       bookingDate: data.date,
       location: data.address,
     };
-    console.log(data);
-    toast.success("Thank you for submitting your booking consultant.");
-    reset();
+    axiosInstance
+      .post("/api/booking/booking-created", bookingData)
+      .then((res) => {
+        toast.success("Thank you for submitting your booking consultant.");
+        reset();
+        navigate("/dashboard");
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -179,14 +196,11 @@ const ServiceBooking = () => {
                   <option disabled selected value="">
                     Choose a service
                   </option>
-
-                  <option value="Modern Interior Design">
-                    Modern Interior Design
-                  </option>
-                  <option value="Office Decoration">Office Decoration</option>
-                  <option value="Lighting Setup">Lighting Setup</option>
-                  <option value="Furniture Design">Furniture Design</option>
-                  <option value="Wall Decoration">Wall Decoration</option>
+                  {services.map((service) => (
+                    <option key={service._id} value={service.service_name}>
+                      {service.service_name}
+                    </option>
+                  ))}
                 </select>
                 {errors.service && (
                   <span className="text-red-500 text-sm mt-1">

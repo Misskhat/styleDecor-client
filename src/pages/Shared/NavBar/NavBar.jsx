@@ -104,7 +104,7 @@ const NavBar = () => {
             </Link>
           )}
           <button className="btn bg-[#00D4FF]">
-            <Link to={"/decorator"}>Decorator</Link>
+            <Link to={"/dashboard"}>Dashboard</Link>
           </button>
         </div>
       </div>

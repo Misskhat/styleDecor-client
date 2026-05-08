@@ -6,12 +6,12 @@ import Registration from "../pages/Registration/Registration";
 import AuthLayout from "../layouts/AuthLayout";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import PrivateRouter from "./PrivateRouter";
-import Decorator from "../pages/Decorator/Decorator";
 import ServiceBooking from "../pages/ServiceBooking/ServiceBooking";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Services from "../pages/Home/Services/Services";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -40,11 +40,10 @@ export const router = createBrowserRouter([
         Component: AboutUs,
       },
       {
-        path: "decorator",
+        path: "dashboard",
         element: (
           <PrivateRouter>
-            {" "}
-            <Decorator></Decorator>
+            <Dashboard></Dashboard>
           </PrivateRouter>
         ),
       },
@@ -52,7 +51,6 @@ export const router = createBrowserRouter([
         path: "service-booking/:id",
         element: (
           <PrivateRouter>
-            {" "}
             <ServiceBooking></ServiceBooking>
           </PrivateRouter>
         ),
