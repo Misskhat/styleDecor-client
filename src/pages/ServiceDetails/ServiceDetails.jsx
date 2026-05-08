@@ -8,10 +8,8 @@ const ServiceDetails = () => {
   const [service, setServices] = useState({});
 
   useEffect(() => {
-    axiosInstance.get("/api/services").then((res) => {
-      const allServices = res.data.services;
-      const findService = allServices.find((service) => service._id == id);
-      setServices(findService);
+    axiosInstance.get(`/api/services/${id}`).then((res) => {
+      setServices(res.data.service);
     });
   }, [id]);
 
