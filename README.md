@@ -1,16 +1,59 @@
-# React + Vite
+# StyleDecor — Smart Home & Ceremony Decoration Booking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Purpose
 
-Currently, two official plugins are available:
+StyleDecor is a modern appointment management system for a local decoration company that offers both in-studio consultations and on-site decoration services for homes and ceremonies. Users can explore decoration packages, check decorator availability, select a date and time, choose a service mode, make payments, and track their service status.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
 
-## React Compiler
+Coming Soon
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Admin Credentials
 
-## Expanding the ESLint configuration
+- Email: (update before submission)
+- Password: (update before submission)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Features
+
+- User Authentication — Firebase Email/Password and Google Login with JWT security
+- Role-Based Access — Three roles: User, Admin, Decorator with protected routes
+- Service Browsing — Search and filter by category and budget range
+- Online Booking System — Book services with date, location, service selection
+- Stripe Payment — Secure payment with transaction history
+- User Dashboard — Manage bookings and payment history
+- Admin Dashboard — Manage services, decorators, bookings, analytics
+- Decorator Dashboard — View assigned projects, update status step by step
+- Service Coverage Map — React Leaflet interactive map
+- Animated Hero — Framer Motion animations
+- Fully Responsive — Tailwind CSS and DaisyUI
+
+## NPM Packages Used
+
+### Frontend
+
+| Package                 | Purpose             |
+| ----------------------- | ------------------- |
+| react                   | Core UI library     |
+| react-router            | Client-side routing |
+| firebase                | Authentication      |
+| axios                   | API requests        |
+| framer-motion           | Hero animations     |
+| react-leaflet           | Coverage map        |
+| @stripe/react-stripe-js | Payment UI          |
+| react-hook-form         | Form handling       |
+| react-toastify          | Notifications       |
+| react-icons             | Icons               |
+| tailwindcss             | Styling             |
+| daisyui                 | UI components       |
+
+### Backend
+
+| Package       | Purpose               |
+| ------------- | --------------------- |
+| express       | Web server            |
+| mongoose      | MongoDB ORM           |
+| jsonwebtoken  | JWT auth              |
+| cookie-parser | Cookie handling       |
+| cors          | CORS config           |
+| dotenv        | Environment variables |
+| stripe        | Payment processing    |
