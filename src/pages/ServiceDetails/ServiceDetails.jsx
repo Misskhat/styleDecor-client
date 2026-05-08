@@ -56,7 +56,7 @@ const ServiceDetails = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4">
-            <Link to={"/service-booking"}>
+            <Link to={`/service-booking/${id}`}>
               <button className="flex flex-1 gap-2 items-center justify-center my-5 bg-linear-to-r from-[#090979] to-[#00D4FF] btn text-white">
                 Book Service
                 <FaArrowRightLong />
