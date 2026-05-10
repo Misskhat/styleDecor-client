@@ -5,7 +5,7 @@ import useAuth from "../hooks/useAuth";
 
 const DashBoardLayout = () => {
   const { role, roleLoading } = useRole();
-  const { signOut } = useAuth();
+  const { signOutUser } = useAuth();
 
   if (roleLoading)
     return (
@@ -45,7 +45,10 @@ const DashBoardLayout = () => {
           </div>
 
           <div>
-            <Link to="/" className="btn btn-neutral btn-sm">
+            <Link
+              to="/"
+              className="btn btn-sm bg-linear-to-r from-[#090979] to-[#00D4FF] text-white"
+            >
               Back To Website
             </Link>
           </div>
@@ -186,7 +189,12 @@ const DashBoardLayout = () => {
             </li>
 
             <li>
-              <button onClick={signOut}>Logout</button>
+              <button
+                className="bg-linear-to-r from-[#090979] to-[#00D4FF] text-white"
+                onClick={signOutUser}
+              >
+                Logout
+              </button>
             </li>
           </ul>
         </aside>

@@ -17,16 +17,15 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = (data) => {
-    // console.log(data);
     signInUser(data.email, data.password)
       .then((result) => {
-        console.log(result.user);
         axiosInstance
           .post("/api/users/login", {
             name: result.user.displayName,
             email: result.user.email,
           })
-          .then(() => {
+          .then((res) => {
+            localStorage.setItem("token", res.data.user.token);
             toast.success("Welcome! and thank you for log in");
             navigate(location?.state || "/");
           });

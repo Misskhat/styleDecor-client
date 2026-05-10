@@ -3,12 +3,12 @@ import useAuth from "./useAuth";
 import { axiosInstance } from "../utility/axiosInstance";
 
 export const useRole = () => {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const [role, setRole] = useState(null);
   const [roleLoading, setRoleLoading] = useState(true);
 
   useEffect(() => {
-    if (user?.email) {
+    if (!loading && user?.email) {
       axiosInstance
         .get(`/api/users/role/${user.email}`)
         .then((res) => {
@@ -20,7 +20,7 @@ export const useRole = () => {
           setRoleLoading(false);
         });
     }
-  }, [user]);
+  }, [user, loading]);
 
   return { role, roleLoading };
 };

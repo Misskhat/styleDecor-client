@@ -13,13 +13,13 @@ const SocialLogInButton = () => {
   const handleSignInGoogle = () => {
     signInGoogle()
       .then((result) => {
-        console.log(result.user);
         axiosInstance
           .post("/api/users/login", {
             name: result.user.displayName,
             email: result.user.email,
           })
-          .then(() => {
+          .then((res) => {
+            localStorage.setItem("token", res.data.user.token); // ✅ store token
             navigate(location?.state || "/");
             toast.success("Welcome! and thank you for log in");
           });
