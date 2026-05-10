@@ -12,6 +12,14 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Services from "../pages/Home/Services/Services";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import DashBoardLayout from "../layouts/DashBoardLayout";
+import Profile from "../pages/Dashboard/pages/Profile";
+import MyBookings from "../pages/Dashboard/pages/MyBookings";
+import MyPayments from "../pages/Dashboard/pages/MyPayments";
+import ManageServices from "../pages/Dashboard/pages/ManageServices";
+import ManageUsers from "../pages/Dashboard/pages/ManageUsers";
+import ManageBookings from "../pages/Dashboard/pages/ManageBookings";
+import AssignedProjects from "../pages/Dashboard/pages/AssignedProjects";
 
 export const router = createBrowserRouter([
   {
@@ -29,7 +37,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "services/:id",
-        Component: ServiceDetails,
+        element: (
+          <PrivateRouter>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRouter>
+        ),
       },
       {
         path: "contact",
@@ -40,20 +52,8 @@ export const router = createBrowserRouter([
         Component: AboutUs,
       },
       {
-        path: "dashboard",
-        element: (
-          <PrivateRouter>
-            <Dashboard></Dashboard>
-          </PrivateRouter>
-        ),
-      },
-      {
         path: "service-booking/:id",
-        element: (
-          <PrivateRouter>
-            <ServiceBooking></ServiceBooking>
-          </PrivateRouter>
-        ),
+        Component: ServiceBooking,
       },
     ],
   },
@@ -68,6 +68,48 @@ export const router = createBrowserRouter([
       {
         path: "registration",
         Component: Registration,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRouter>
+        <DashBoardLayout></DashBoardLayout>
+      </PrivateRouter>
+    ),
+    children: [
+      {
+        index: true,
+        Component: Dashboard,
+      },
+      {
+        path: "profile",
+        Component: Profile,
+      },
+      {
+        path: "my-bookings",
+        Component: MyBookings,
+      },
+      {
+        path: "my-payments",
+        Component: MyPayments,
+      },
+      {
+        path: "manage-services",
+        Component: ManageServices,
+      },
+      {
+        path: "manage-users",
+        Component: ManageUsers,
+      },
+      {
+        path: "manage-bookings",
+        Component: ManageBookings,
+      },
+      {
+        path: "assigned-projects",
+        Component: AssignedProjects,
       },
     ],
   },
