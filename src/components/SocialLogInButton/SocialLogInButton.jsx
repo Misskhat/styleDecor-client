@@ -19,7 +19,7 @@ const SocialLogInButton = () => {
             email: result.user.email,
           })
           .then((res) => {
-            localStorage.setItem("token", res.data.user.token); // ✅ store token
+            localStorage.setItem("token", res.data.user.token); 
             navigate(location?.state || "/");
             toast.success("Welcome! and thank you for log in");
           });
