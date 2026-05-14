@@ -41,7 +41,7 @@ const ManageServices = () => {
 
       const res = await axiosInstance.post("/api/services", serviceData);
 
-      if (res.data.insertedId) {
+      if (res.data.newService) {
         toast.success("Service added successfully");
 
         document.getElementById("add_service_modal").close();
@@ -67,7 +67,7 @@ const ManageServices = () => {
     try {
       const res = await axiosInstance.delete(`/api/services/${id}`);
 
-      if (res.data.deletedCount > 0) {
+      if (res.data.deleteServices > 0) {
         toast.success("Service deleted successfully");
 
         const remainingServices = services.filter(
