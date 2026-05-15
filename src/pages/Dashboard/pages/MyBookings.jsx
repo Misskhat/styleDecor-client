@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { axiosInstance } from "../../../utility/axiosInstance";
 
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   // Fetch Booking Data
   useEffect(() => {
@@ -141,7 +142,14 @@ const MyBookings = () => {
                     <div className="flex flex-wrap gap-2">
                       {/* Pay Button */}
                       {!booking?.isPaid && (
-                        <button className="btn btn-sm btn-primary">Pay</button>
+                        <button
+                          onClick={() =>
+                            navigate("/dashboard/payment", { state: booking })
+                          }
+                          className="btn btn-sm btn-primary"
+                        >
+                          Pay
+                        </button>
                       )}
 
                       {/* Cancel Button */}

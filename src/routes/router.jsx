@@ -20,6 +20,7 @@ import ManageServices from "../pages/Dashboard/pages/ManageServices";
 import ManageUsers from "../pages/Dashboard/pages/ManageUsers";
 import ManageBookings from "../pages/Dashboard/pages/ManageBookings";
 import AssignedProjects from "../pages/Dashboard/pages/AssignedProjects";
+import Payment from "../pages/payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -110,6 +111,14 @@ export const router = createBrowserRouter([
       {
         path: "assigned-projects",
         Component: AssignedProjects,
+      },
+      {
+        path: "payment",
+        element: (
+          <PrivateRouter>
+            <Payment></Payment>
+          </PrivateRouter>
+        ),
       },
     ],
   },

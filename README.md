@@ -10,8 +10,18 @@ Coming Soon
 
 ## Admin Credentials
 
-- Email: (update before submission)
-- Password: (update before submission)
+- Email: admin@admin.com
+- Password: admin123
+
+## Decorator Credentials
+
+- Email: decorator@decorator.com
+- Password: decorator123
+
+## User Credentials
+
+- Email: user@user.com
+- Password: user123
 
 ## Key Features
 
