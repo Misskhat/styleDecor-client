@@ -6,7 +6,7 @@ StyleDecor is a modern appointment management system for a local decoration comp
 
 ## Live URL
 
-Coming Soon
+[Live website link](https://style-decor-client-seven.vercel.app)
 
 ## Admin Credentials
 
